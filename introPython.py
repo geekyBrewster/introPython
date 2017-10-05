@@ -24,6 +24,7 @@ print now.month
 print now.day
 print '%s / %s / %s' % (now.month, now.day, now.year)
 print '%s : %s : %s' % (now.hour, now.minute, now.second)
+#------------------------------
 
 ## Lists - are like arrays
 # Building a List
@@ -38,7 +39,90 @@ print(mylist[0])    #prints 1
 for x in mylist:
     print(x)
 
-# The % operator & argument specifiers
+# Find the length of a list
+len(mylist) #returns the length of the list
+
+# Slicing a list (or a string)
+suitcase = ["sunglasses", "hat", "passport", "laptop", "suit", "shoes"]
+
+# The first and second items (index zero and one)
+first = suitcase[0:2]  #returns 'sunglasses' & 'hat'
+
+# Third and fourth items (index two and three)
+middle = suitcase[2:4]  #returns 'passport' & 'laptop'
+
+animals = "catdogfrog"
+# The first three characters of animals
+cat = animals[:3]
+# The fourth through sixth characters
+dog = animals[3:6]
+# From the seventh character to the end
+frog = animals[6:]
+
+animals = ["aardvark", "badger", "duck", "emu", "fennec fox"]
+# Find the index where "duck" is in the list
+duck_index = animals.index("duck")
+
+# Insert "cobra" at that index
+animals.insert(duck_index, "cobra")
+
+print animals # Observe what prints after the insert operation
+
+# Sort a list
+start_list = [5, 3, 1, 2, 4]
+square_list = []
+
+for number in start_list:
+  square_list.append(number ** 2)
+
+square_list.sort() #sorts numerically ascending (or alphabetically for strings)
+
+print square_list
+
+#To Remove an item from a list
+start_list.remove(5)
+
+#Example of dictionary w/ multiple types of data:
+inventory = {
+    'gold' : 500,
+    'pouch' : ['flint', 'twine', ‘gemstone'],
+    # Assigned a new list to 'pouch' key
+    'backpack' : ['xylophone','dagger', 'bedroll','bread loaf']
+}
+# Adding a key 'burlap bag' and assigning a list to it
+inventory['burlap bag'] = ['apple', 'small ruby', 'three-toed sloth']
+# Sorting the list found under the key 'pouch'
+inventory[‘pouch'].sort()
+# Add new item to inventory
+inventory['pocket'] = ["seashell", "strange berry", “lint"]
+# Sort the items in ‘backpack’
+inventory[‘backpack'].sort()
+inventory[‘backpack'].remove('dagger')
+# Add 50 gold to the gold already in the inventory
+inventory['gold'] = inventory['gold'] + 50
+
+# --------------------------------------
+## Dictonaries -- like lists but w/ key-value pairs, defined by { }
+#Example:
+menu = {} # Empty dictionary
+menu['Chicken Alfredo'] = 14.50 # Adding new key-value pair
+print menu['Chicken Alfredo']
+
+# Add some dish-price pairs to menu!
+menu['Pizza'] = 11.25
+menu['Meatballs'] = 9.95
+menu['Spaghetti'] = 12.75
+
+print "There are " + str(len(menu)) + " items on the menu."
+print menu
+
+# To delete a key-value pair
+del menu['Pizza']
+
+
+
+# --------------------------------------
+## The % operator & argument specifiers
 print("Hello, %s!" % name)
 
 age = 23
@@ -56,7 +140,7 @@ print("A list: %s" % thislist)
 %.<number of digits>f - Floating point numbers w/ fixed amt of decimal places
 %x / %X - Integers in hex representation (lowercase / uppercase
 """
-
+# --------------------------------------
 ## Manipulating strings
 mystring = "What a wonderful world"
 len(mystring) #length of the string, including spaces & punctuation
@@ -70,8 +154,8 @@ mystring.startswith("wonder") #will print true if the string starts w/ 'wonder'
 mystring.endswith("asdffgh")  #will print true if the string ends w/ 'asdffgh'
 mystring.split(" ") #splits the string at ' ' and places each piece in a list
 
+# --------------------------------------
 ## Conditionals
-
 # Comparison (==), Not equal (!=)
 
 # IF statement (If, Else If (elif), Else)
@@ -93,6 +177,7 @@ print( x is y )    #prints out False
 
 # 'Not' operator -- flips meaning of boolean
 
+# --------------------------------------
 ## Loops
 
 #For loops
@@ -138,7 +223,6 @@ for x in range(10):
         continue
     print(x)
 
-
 # Using an Else in a loop
 # Prints out 0,1,2,3,4 and then it prints "count value reached 5"
 
@@ -157,6 +241,7 @@ for i in range(1, 10):
 else:
     print("this is not printed because for loop is terminated because of break but not due to fail in condition")
 
+# --------------------------------------
 ## Functions
 # Declaring and calling a function
 	def tax(bill):
@@ -173,6 +258,7 @@ else:
 	meal_with_tax = tax(meal_cost)
 	meal_with_tip = tip(meal_with_tax)
 
+# --------------------------------------
 ## Importing a module
 # generic import
 import math #imports math module
@@ -184,7 +270,7 @@ print math.sqrt(25)  #uses sqrt function inside math module
 # universal import (don't need module.function to call function)
 # Careful here: you import lots of variables and lose connect to which modele they came from
 """ from math import * """
-
+# --------------------------------------
 ## Built in Functions
 # Find min / max values
 print min(23, 35, 12, 45)  #would return 12
@@ -197,3 +283,5 @@ print abs(-36)  #world return 36
 print type(67)  #would return <type 'int'>
 print type(9.8)  #would return <type 'float'>
 print type("taco")  #would return <type 'str'>
+
+# --------------------------------------
