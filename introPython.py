@@ -1,3 +1,7 @@
+## Clarify the different styles for defining the source code encoding at the top of a Python source file:
+# This Python file uses the following encoding: utf-8
+import os, sys
+
 ## Declaring variables (variables are objects & you don't have to declare type)
 mynumber = 6
 myfloat = 7.5
@@ -10,6 +14,16 @@ print("Hello " + name)  #prints "Hello Bob"
 print (mynumber * myfloat)
 print (3 ** 4)  # is 3 to the 4th power, ** = exponent
 print (greeting * 3)  #prints 'Hello World' three times
+
+## Datetime Library
+from datetime import datetime   #imports datetime library
+now = datetime.now()
+print now
+print now.year
+print now.month
+print now.day
+print '%s / %s / %s' % (now.month, now.day, now.year)
+print '%s : %s : %s' % (now.hour, now.minute, now.second)
 
 ## Lists - are like arrays
 # Building a List
@@ -25,7 +39,7 @@ for x in mylist:
     print(x)
 
 # The % operator & argument specifiers
-print("Hello, %s!" % name) # This prints out “Hello, Bob”
+print("Hello, %s!" % name)
 
 age = 23
 print("%s is %d years old." % (name, age)) # This prints out "Bob is 23 years old"
@@ -35,11 +49,13 @@ thislist = [2, 4, 6]
 print("A list: %s" % thislist)
 
 ## Basic argument specifiers
-#  %s - String (or any object w/ a string representation, like a number
-#  %d - Integers
-#  %f - Floating point numbers
-#  %.<number of digits>f - Floating point numbers w/ fixed amt of decimal places
-#  %x / %X - Integers in hex representation (lowercase / uppercase)
+"""
+%s - String (or any object w/ a string representation, like a number
+%d - Integers
+%f - Floating point numbers
+%.<number of digits>f - Floating point numbers w/ fixed amt of decimal places
+%x / %X - Integers in hex representation (lowercase / uppercase
+"""
 
 ## Manipulating strings
 mystring = "What a wonderful world"
