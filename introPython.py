@@ -119,7 +119,9 @@ print menu
 # To delete a key-value pair
 del menu['Pizza']
 
-
+# Using a For loop to step through a dictionary
+for key in dict :
+    print dict[key]
 
 # --------------------------------------
 ## The % operator & argument specifiers
