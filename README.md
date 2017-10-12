@@ -4,3 +4,4 @@ Collection of files generated while learning Python 3, using both a Udemy course
 ## Technologies Used
 - Python
 - mySQL
+- Jupyter Notebooks

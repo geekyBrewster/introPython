@@ -8,11 +8,18 @@ myfloat = 7.5
 name = "Bob"
 greeting = "Hello World"
 
+# Note: Python 2 does "classic" division
+3 / 2   # In Python 2, this would equal 1, where Python 3 gives you 1.5
+
+# To cast data type in Python 2 to get the decimal answer:
+float(3) / 2
+
 print("Hello " + name)  #prints "Hello Bob"
 
 ## Simple operators (can operate on both numbers and strings)
 print (mynumber * myfloat)
-print (3 ** 4)  # is 3 to the 4th power, ** = exponent
+print (3 ** 4)  # is 3 to the 4th power, ** = exponent (or root)
+print (4 ** 0.5)  # is the square root of 4
 print (greeting * 3)  #prints 'Hello World' three times
 
 ## Datetime Library
