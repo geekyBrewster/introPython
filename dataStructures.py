@@ -11,9 +11,26 @@ mylist.append(3)    #mylist = [1, 2, 3]
 print(mylist[0])    #prints 1
 
 # Iterating over a List
-#prints out 1, 2, 3
-for x in mylist:
-    print(x)
+# Method 1: uses items to step through the list
+# Cannot modify items in the list
+for item in mylist:
+    print(item)
+
+# Method 2: uses index to step through the list so you can modify elments in list
+for i in range(len(mylist)):
+    print(mylist(i))
+
+#Iterating across a list of lists
+n = [[1, 2, 3], [4, 5, 6, 7, 8, 9]]
+
+def flatten(lists):
+  results = []
+  for numbers in lists:
+    for number in numbers:
+      results.append(number)
+  return results
+
+print flatten(n)
 
 # Find the length of a list
 len(mylist) #returns the length of the list
@@ -55,8 +72,14 @@ square_list.sort() #sorts numerically ascending (or alphabetically for strings)
 
 print square_list
 
-#To Remove an item from a list
+#To Remove an item from a list using item's name
 start_list.remove(5)
+
+#To Pop an item from a list using its index & return the item
+start_list.pop(1)
+
+#To Delete an item and not return the value
+del(start_list(2))
 
 # --------------------------------------
 ## Dictonaries -- like lists but w/ key-value pairs, defined by { }

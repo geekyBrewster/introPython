@@ -46,6 +46,20 @@ mystring.startswith("wonder") #will print true if the string starts w/ 'wonder'
 mystring.endswith("asdffgh")  #will print true if the string ends w/ 'asdffgh'
 mystring.split(" ") #splits the string at ' ' and places each piece in a list
 
+# Grab everything, but go in steps size of 1
+mystring[::1]
+# Grab everything, but go in steps size of 2
+mystring[::2]
+
+#Immutablity - you cannot change a character in the string after you make it
+# Error: mystring[0] = "Z" -- produces TypeError
+
+#Concatenation
+mystring + ' isn\'t it?'
+#You can also reassign the string mystring = "Holy Cow!"
+
+
+
 # --------------------------------------
 ## The % operator & argument specifiers
 print("Hello, %s!" % name)
