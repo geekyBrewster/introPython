@@ -2,7 +2,7 @@
 # This Python file uses the following encoding: utf-8
 import os, sys
 
-## Lists - are like arrays
+## LISTS - are like arrays
 # Building a List
 mylist = [ ]
 mylist.append(1)
@@ -81,8 +81,19 @@ start_list.pop(1)
 #To Delete an item and not return the value
 del(start_list(2))
 
+#LIST COMPREHENSION - Building lists according to logic
+# Remember, in the range, the last end number is non-inclusive!!
+evens_to_50 = [i for i in range(51) if i % 2 == 0]
+print evens_to_50
+
+doubles_by_3 = [x * 2 for x in range(1, 6) if (x * 2) % 3 == 0]
+
+even_squares = [x ** 2 for x in range(2, 11) if (x ** 2) % 2 == 0]
+
+print even_squares
+
 # --------------------------------------
-## Dictonaries -- like lists but w/ key-value pairs, defined by { }
+## DICTIONARIES -- like lists but w/ key-value pairs, defined by { }
 #Example:
 menu = {} # Empty dictionary
 menu['Chicken Alfredo'] = 14.50 # Adding new key-value pair
@@ -101,7 +112,7 @@ del menu['Pizza']
 
 # Using a For loop to step through a dictionary
 for key in dict :
-    print dict[key]
+    print key, dict[key]
 
 #Example of dictionary w/ multiple types of data:
 inventory = {

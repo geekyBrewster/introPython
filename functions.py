@@ -45,3 +45,16 @@ print type(9.8)  #would return <type 'float'>
 print type("taco")  #would return <type 'str'>
 
 # --------------------------------------
+# ANONYMOUS FUNCTIONS USING LAMBDA
+
+# Passing an anonymous function into the filter() function
+languages = ["HTML", "JavaScript", "Python", "Ruby"]
+print filter(lambda x: x == "Python", languages)
+
+# Filter list using an anonymous function that only prints numbers divisiable by 3
+my_list = range(16)
+print filter(lambda x: x % 3 == 0, my_list)
+
+# Make a list of squares b/wn 1 and 10, then filter those results between 30 and 70 (inclusive)
+squares = [x**2 for x in range(1,11)]
+print filter(lambda x: x >= 30 and x <= 70, squares)
