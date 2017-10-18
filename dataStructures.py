@@ -132,3 +132,113 @@ inventory[‘backpack'].sort()
 inventory[‘backpack'].remove('dagger')
 # Add 50 gold to the gold already in the inventory
 inventory['gold'] = inventory['gold'] + 50
+
+# --------------------------------------
+## CLASSES
+class Fruit(object):
+  """A class that makes various tasty fruits."""
+  # Initalize the class with __init__ and attributes
+  # Use 'self' to reference attributes w/in the class
+  def __init__(self, name, color, flavor, poisonous):
+    self.name = name
+    self.color = color
+    self.flavor = flavor
+    self.poisonous = poisonous
+
+  def description(self):
+    print "I'm a %s %s and I taste %s." % (self.color, self.name, self.flavor)
+
+  def is_edible(self):
+    if not self.poisonous:
+      print "Yep! I'm edible."
+    else:
+      print "Don't eat me! I am super poisonous."
+
+lemon = Fruit("lemon", "yellow", "sour", False)
+
+lemon.description()
+lemon.is_edible()
+
+# Member variables are available to certain classes
+# Instance variables are avaialbe to certain instances of classes
+class Animal(object):
+  #Member variables - still use 'self' to refer to them
+  is_alive = True
+  health = "good"
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  # Add your method here!
+  def description(self):
+    print self.name
+    print self.age
+    print self.health
+
+hippo = Animal("Anderson", 36)
+hippo.description()
+sloth = Animal("Bob", 12)
+sloth.description()
+ocelot = Animal("Clarence", 8)
+ocelot.description()
+
+#INHERITANCE
+class Customer(object):
+  """Produces objects that represent customers."""
+  def __init__(self, customer_id):
+    self.customer_id = customer_id
+
+  def display_cart(self):
+    print "I'm a string that stands in for the contents of your shopping cart!"
+
+# The class below inherits from the Customer class
+class ReturningCustomer(Customer):
+  """For customers of the repeat variety."""
+  def display_order_history(self):
+    print "I'm a string that stands in for your order history!"
+
+monty_python = ReturningCustomer("ID: 12345")
+monty_python.display_cart()
+monty_python.display_order_history()
+
+# Overriding methods in a derived class
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+class PartTimeEmployee(Employee):
+  def __init__(self, hours):
+    self.hours = hours
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return 12.00 * hours
+
+# Referring to a method from the parent class (or superclass) using super( )
+class Employee(object):
+  """Models real-life employees!"""
+  def __init__(self, employee_name):
+    self.employee_name = employee_name
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return hours * 20.00
+
+class PartTimeEmployee(Employee):
+  def __init__(self, hours):
+    self.hours = hours
+
+  def calculate_wage(self, hours):
+    self.hours = hours
+    return 12.00 * hours
+
+  def full_time_wage(self, hours):
+    self.hours = hours
+    return super(PartTimeEmployee, self).calculate_wage(hours)
+
+milton = PartTimeEmployee("Milton")
+print milton.full_time_wage(10)
